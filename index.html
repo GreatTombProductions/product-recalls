@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recall Check</title>
+    <meta name="description" content="Search CPSC consumer product recalls by product name or browse by category. 9,800+ recalls since 1973 covering toys, electronics, furniture, appliances, and more.">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e8;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .subtitle a { color: #6688cc; text-decoration: none; }
+        .subtitle a:hover { text-decoration: underline; }
+        .stats-bar {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.2rem;
+            background: #12121a;
+            border-radius: 8px;
+            border: 1px solid #1e1e2e;
+        }
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.3rem; font-weight: 700; color: #cc7744; }
+        .stat-label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.03em; }
+
+        /* Mode tabs */
+        .mode-tabs {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+        }
+        .mode-tab {
+            padding: 0.5rem 1.2rem;
+            background: #12121a;
+            border: 1px solid #2a2a3a;
+            border-radius: 6px;
+            color: #888;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.15s;
+        }
+        .mode-tab:hover { color: #ccc; border-color: #444; }
+        .mode-tab.active {
+            color: #fff;
+            background: #1a1a2e;
+            border-color: #cc7744;
+        }
+
+        /* Search */
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            background: #12121a;
+            border: 1px solid #2a2a3a;
+            border-radius: 6px;
+            color: #e0e0e8;
+            font-size: 0.95rem;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: #cc7744;
+        }
+        .search-box input::placeholder { color: #555; }
+        .search-box button {
+            padding: 0.7rem 1.5rem;
+            background: #cc7744;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .search-box button:hover { background: #dd8855; }
+
+        .search-hint {
+            color: #555;
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Categories grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .category-card {
+            padding: 1rem 1.2rem;
+            background: #12121a;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .category-card:hover {
+            border-color: #cc7744;
+            background: #151520;
+        }
+        .category-card.active {
+            border-color: #cc7744;
+            background: #1a1520;
+        }
+        .cat-name { font-weight: 600; color: #e0e0e8; margin-bottom: 0.3rem; }
+        .cat-stats { font-size: 0.8rem; color: #888; }
+        .cat-stats .danger { color: #cc5544; }
+
+        /* Results */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        .results-count {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .results-sort {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .results-sort select {
+            background: #12121a;
+            border: 1px solid #2a2a3a;
+            border-radius: 4px;
+            color: #ccc;
+            padding: 0.3rem 0.5rem;
+            font-size: 0.8rem;
+        }
+        .recall-card {
+            padding: 1rem 1.2rem;
+            background: #12121a;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+            margin-bottom: 0.6rem;
+            cursor: pointer;
+            transition: border-color 0.15s;
+        }
+        .recall-card:hover { border-color: #3a3a4a; }
+        .recall-card.expanded { border-color: #cc7744; }
+        .recall-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .recall-name {
+            font-weight: 600;
+            color: #e0e0e8;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+        .recall-date {
+            color: #666;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        .recall-hazard {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            line-height: 1.4;
+        }
+        .recall-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-top: 0.4rem;
+        }
+        .tag {
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.72rem;
+            font-weight: 500;
+        }
+        .tag-injury { background: #3a2020; color: #cc6655; }
+        .tag-death { background: #4a1515; color: #ee5544; }
+        .tag-country { background: #1a2030; color: #6688bb; }
+        .tag-remedy { background: #1a2a1a; color: #66aa66; }
+        .tag-category { background: #2a2a1a; color: #aaaa66; }
+
+        /* Detail panel */
+        .recall-detail {
+            display: none;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #1e1e2e;
+        }
+        .recall-card.expanded .recall-detail { display: block; }
+        .detail-section { margin-bottom: 0.8rem; }
+        .detail-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.2rem;
+        }
+        .detail-text {
+            font-size: 0.88rem;
+            color: #bbb;
+            line-height: 1.5;
+        }
+        .detail-link {
+            display: inline-block;
+            margin-top: 0.4rem;
+            color: #6688cc;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .detail-link:hover { text-decoration: underline; }
+        .detail-images {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .detail-images img {
+            max-width: 180px;
+            max-height: 140px;
+            border-radius: 6px;
+            border: 1px solid #2a2a3a;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        /* Load more */
+        .load-more {
+            text-align: center;
+            padding: 1rem;
+        }
+        .load-more button {
+            padding: 0.6rem 2rem;
+            background: #1a1a2e;
+            border: 1px solid #2a2a3a;
+            border-radius: 6px;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .load-more button:hover { border-color: #cc7744; }
+
+        /* Yearly chart */
+        .chart-container {
+            margin: 1.5rem 0;
+            padding: 1rem 1.2rem;
+            background: #12121a;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+        }
+        .chart-title {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+        }
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+            height: 100px;
+        }
+        .chart-bar {
+            flex: 1;
+            min-width: 4px;
+            background: #cc7744;
+            border-radius: 2px 2px 0 0;
+            position: relative;
+            cursor: pointer;
+        }
+        .chart-bar:hover { background: #dd8855; }
+        .chart-bar .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.3rem 0.5rem;
+            background: #1a1a2e;
+            border: 1px solid #3a3a4a;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            white-space: nowrap;
+            color: #ccc;
+            z-index: 10;
+        }
+        .chart-bar:hover .tooltip { display: block; }
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.3rem;
+            font-size: 0.7rem;
+            color: #555;
+        }
+
+        /* Countries chart */
+        .country-bars { margin-top: 0.8rem; }
+        .country-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.4rem;
+            font-size: 0.82rem;
+        }
+        .country-name { width: 120px; color: #999; }
+        .country-bar-wrap { flex: 1; height: 18px; background: #0e0e16; border-radius: 3px; overflow: hidden; }
+        .country-bar-fill { height: 100%; background: #cc7744; border-radius: 3px; }
+        .country-count { width: 60px; text-align: right; color: #888; font-size: 0.78rem; }
+
+        .hidden { display: none; }
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        /* Widget banner */
+        .widget-banner {
+            margin-top: 2rem;
+            padding: 0.8rem 1rem;
+            background: #12121a;
+            border: 1px solid #1e1e2e;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .widget-banner a { color: #6688cc; text-decoration: none; font-size: 0.8rem; }
+        .widget-banner a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            h1 { font-size: 1.4rem; }
+            .stats-bar { gap: 1rem; padding: 0.8rem; }
+            .stat-value { font-size: 1.1rem; }
+            .categories-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Recall Check</h1>
+        <div class="subtitle">
+            Search CPSC consumer product recalls.
+            Data: <a href="https://www.saferproducts.gov/" target="_blank" rel="noopener">SaferProducts.gov</a>
+        </div>
+
+        <div class="stats-bar" id="stats-bar">
+            <div class="loading">Loading...</div>
+        </div>
+
+        <div class="mode-tabs">
+            <div class="mode-tab active" data-mode="search" onclick="switchMode('search')">Search Products</div>
+            <div class="mode-tab" data-mode="browse" onclick="switchMode('browse')">Browse Categories</div>
+        </div>
+
+        <!-- Search mode -->
+        <div id="search-panel">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search product recalls (e.g., crib, space heater, battery)..." autocomplete="off">
+                <button onclick="doSearch()">Search</button>
+            </div>
+            <div class="search-hint">Search across 9,800+ recalls by product name. Try: stroller, laptop, candle, hoverboard</div>
+        </div>
+
+        <!-- Browse mode -->
+        <div id="browse-panel" class="hidden">
+            <div class="categories-grid" id="categories-grid"></div>
+        </div>
+
+        <!-- Results -->
+        <div id="results-area" class="hidden">
+            <div class="results-header">
+                <div class="results-count" id="results-count"></div>
+                <div class="results-sort">
+                    Sort:
+                    <select id="sort-select" onchange="sortResults()">
+                        <option value="date-desc">Newest first</option>
+                        <option value="date-asc">Oldest first</option>
+                        <option value="severity">Most severe</option>
+                    </select>
+                </div>
+            </div>
+            <div id="results-list"></div>
+            <div class="load-more" id="load-more">
+                <button onclick="loadMore()">Show more recalls</button>
+            </div>
+        </div>
+
+        <!-- Yearly chart -->
+        <div class="chart-container" id="yearly-chart" style="display:none">
+            <div class="chart-title">Recalls by Year</div>
+            <div class="chart-bars" id="chart-bars"></div>
+            <div class="chart-labels" id="chart-labels"></div>
+        </div>
+
+        <!-- Country chart -->
+        <div class="chart-container" id="country-chart" style="display:none">
+            <div class="chart-title">Top Manufacturing Countries</div>
+            <div class="country-bars" id="country-bars"></div>
+        </div>
+
+        <div class="widget-banner" style="margin-top:1rem;margin-bottom:0.5rem;text-align:left;font-size:0.78rem;color:#666;line-height:1.5;">
+            This tool shows recalls as published by the CPSC. A recall means the product has been determined to present
+            a risk of injury or death. Check recall details and CPSC.gov links to determine if your specific product
+            is affected. Data spans 1973 to present and is updated periodically.
+        </div>
+        <div class="widget-banner">
+            <a href="https://greattombproductions.github.io/quest-board/" target="_blank" rel="noopener">More public data tools</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <p class="quest-board-feedback" style="margin:1.25rem auto;max-width:720px;padding:0 1rem;text-align:center;font-size:0.85rem;color:#888;">Have feedback or a related data lead? <a href="https://greattombproductions.github.io/quest-board/?project=product-recalls#suggest" target="_blank" rel="noopener">Suggest it on the Quest Board</a>.</p>
+</body>
+</html>

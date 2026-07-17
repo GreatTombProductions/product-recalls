@@ -1,0 +1,668 @@
+{
+  "total_recalls": 9818,
+  "recalls_with_injuries": 5291,
+  "recalls_with_deaths": 109,
+  "date_range": "1973\u20132026",
+  "earliest_date": "1973-06-08",
+  "latest_date": "2026-05-21",
+  "yearly_trends": [
+    {
+      "year": "1973",
+      "total": 8,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1974",
+      "total": 14,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1975",
+      "total": 13,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1976",
+      "total": 27,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1977",
+      "total": 36,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1978",
+      "total": 43,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1979",
+      "total": 33,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1980",
+      "total": 22,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1981",
+      "total": 12,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1982",
+      "total": 23,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1983",
+      "total": 23,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1984",
+      "total": 44,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1985",
+      "total": 30,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1986",
+      "total": 46,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1987",
+      "total": 49,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1988",
+      "total": 75,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1989",
+      "total": 80,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1990",
+      "total": 78,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1991",
+      "total": 84,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1992",
+      "total": 82,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1993",
+      "total": 75,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1994",
+      "total": 109,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1995",
+      "total": 128,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1996",
+      "total": 138,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1997",
+      "total": 151,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1998",
+      "total": 133,
+      "injuries": 0,
+      "deaths": 0
+    },
+    {
+      "year": "1999",
+      "total": 156,
+      "injuries": 33,
+      "deaths": 5
+    },
+    {
+      "year": "2000",
+      "total": 193,
+      "injuries": 59,
+      "deaths": 2
+    },
+    {
+      "year": "2001",
+      "total": 245,
+      "injuries": 219,
+      "deaths": 4
+    },
+    {
+      "year": "2002",
+      "total": 256,
+      "injuries": 238,
+      "deaths": 1
+    },
+    {
+      "year": "2003",
+      "total": 216,
+      "injuries": 158,
+      "deaths": 3
+    },
+    {
+      "year": "2004",
+      "total": 278,
+      "injuries": 211,
+      "deaths": 3
+    },
+    {
+      "year": "2005",
+      "total": 323,
+      "injuries": 265,
+      "deaths": 0
+    },
+    {
+      "year": "2006",
+      "total": 319,
+      "injuries": 248,
+      "deaths": 4
+    },
+    {
+      "year": "2007",
+      "total": 452,
+      "injuries": 247,
+      "deaths": 3
+    },
+    {
+      "year": "2008",
+      "total": 392,
+      "injuries": 215,
+      "deaths": 6
+    },
+    {
+      "year": "2009",
+      "total": 383,
+      "injuries": 237,
+      "deaths": 13
+    },
+    {
+      "year": "2010",
+      "total": 362,
+      "injuries": 223,
+      "deaths": 7
+    },
+    {
+      "year": "2011",
+      "total": 313,
+      "injuries": 224,
+      "deaths": 3
+    },
+    {
+      "year": "2012",
+      "total": 310,
+      "injuries": 230,
+      "deaths": 4
+    },
+    {
+      "year": "2013",
+      "total": 290,
+      "injuries": 199,
+      "deaths": 3
+    },
+    {
+      "year": "2014",
+      "total": 296,
+      "injuries": 197,
+      "deaths": 1
+    },
+    {
+      "year": "2015",
+      "total": 305,
+      "injuries": 212,
+      "deaths": 3
+    },
+    {
+      "year": "2016",
+      "total": 330,
+      "injuries": 233,
+      "deaths": 2
+    },
+    {
+      "year": "2017",
+      "total": 280,
+      "injuries": 187,
+      "deaths": 2
+    },
+    {
+      "year": "2018",
+      "total": 258,
+      "injuries": 181,
+      "deaths": 0
+    },
+    {
+      "year": "2019",
+      "total": 241,
+      "injuries": 155,
+      "deaths": 1
+    },
+    {
+      "year": "2020",
+      "total": 257,
+      "injuries": 144,
+      "deaths": 3
+    },
+    {
+      "year": "2021",
+      "total": 219,
+      "injuries": 175,
+      "deaths": 8
+    },
+    {
+      "year": "2022",
+      "total": 292,
+      "injuries": 165,
+      "deaths": 4
+    },
+    {
+      "year": "2023",
+      "total": 324,
+      "injuries": 196,
+      "deaths": 8
+    },
+    {
+      "year": "2024",
+      "total": 305,
+      "injuries": 187,
+      "deaths": 14
+    },
+    {
+      "year": "2025",
+      "total": 420,
+      "injuries": 178,
+      "deaths": 1
+    },
+    {
+      "year": "2026",
+      "total": 247,
+      "injuries": 75,
+      "deaths": 1
+    }
+  ],
+  "top_countries": [
+    {
+      "country": "China",
+      "count": 4544
+    },
+    {
+      "country": "United States",
+      "count": 1552
+    },
+    {
+      "country": "Taiwan",
+      "count": 515
+    },
+    {
+      "country": "Mexico",
+      "count": 243
+    },
+    {
+      "country": "Vietnam",
+      "count": 180
+    },
+    {
+      "country": "Canada",
+      "count": 145
+    },
+    {
+      "country": "India",
+      "count": 143
+    },
+    {
+      "country": "Japan",
+      "count": 108
+    },
+    {
+      "country": "Hong Kong",
+      "count": 103
+    },
+    {
+      "country": "Thailand",
+      "count": 100
+    },
+    {
+      "country": "Italy",
+      "count": 87
+    },
+    {
+      "country": "Indonesia",
+      "count": 76
+    },
+    {
+      "country": "Germany",
+      "count": 60
+    },
+    {
+      "country": "South Korea",
+      "count": 54
+    },
+    {
+      "country": "Malaysia",
+      "count": 43
+    }
+  ],
+  "categories": [
+    {
+      "name": "Electrical & Lighting",
+      "total": 3572,
+      "injuries": 1498,
+      "deaths": 34
+    },
+    {
+      "name": "Children & Toys",
+      "total": 3438,
+      "injuries": 1443,
+      "deaths": 59
+    },
+    {
+      "name": "Vehicles & Transportation",
+      "total": 1550,
+      "injuries": 947,
+      "deaths": 15
+    },
+    {
+      "name": "Household",
+      "total": 1208,
+      "injuries": 530,
+      "deaths": 14
+    },
+    {
+      "name": "Sports & Fitness",
+      "total": 1168,
+      "injuries": 735,
+      "deaths": 7
+    },
+    {
+      "name": "Food & Kitchen",
+      "total": 1163,
+      "injuries": 673,
+      "deaths": 7
+    },
+    {
+      "name": "Furniture",
+      "total": 1121,
+      "injuries": 635,
+      "deaths": 25
+    },
+    {
+      "name": "Outdoor & Recreation",
+      "total": 1113,
+      "injuries": 633,
+      "deaths": 6
+    },
+    {
+      "name": "Other",
+      "total": 940,
+      "injuries": 627,
+      "deaths": 7
+    },
+    {
+      "name": "Appliances",
+      "total": 848,
+      "injuries": 523,
+      "deaths": 8
+    },
+    {
+      "name": "Clothing & Accessories",
+      "total": 807,
+      "injuries": 220,
+      "deaths": 5
+    },
+    {
+      "name": "Electronics",
+      "total": 695,
+      "injuries": 476,
+      "deaths": 8
+    },
+    {
+      "name": "Fuel & Heating",
+      "total": 603,
+      "injuries": 313,
+      "deaths": 7
+    },
+    {
+      "name": "Health & Personal Care",
+      "total": 202,
+      "injuries": 75,
+      "deaths": 8
+    }
+  ],
+  "remedy_types": [
+    {
+      "type": "Refund",
+      "count": 2245
+    },
+    {
+      "type": "Repair",
+      "count": 1542
+    },
+    {
+      "type": "Replace",
+      "count": 1312
+    },
+    {
+      "type": "New Instructions",
+      "count": 55
+    },
+    {
+      "type": "Dispose",
+      "count": 32
+    },
+    {
+      "type": "Label",
+      "count": 8
+    },
+    {
+      "type": "No Remedy Available",
+      "count": 5
+    },
+    {
+      "type": "Inspect",
+      "count": 4
+    },
+    {
+      "type": "R",
+      "count": 1
+    },
+    {
+      "type": "Consumers should immediately stop using the recalled boilers and contact NTI Boilers to arrange to have a certified technician install the repair at no cost to the consumer. Consumers who must continue using the boiler while awaiting repair should have working smoke and carbon monoxide alarms in their homes.",
+      "count": 1
+    }
+  ],
+  "recent_notable": [
+    {
+      "id": "26504",
+      "date": "2026-05-21",
+      "name": "Bethlehem Lights 10-inch Illuminated Ribbon Spheres",
+      "hazard": "The LED lights on the recalled illuminated spheres can overheat, posing a risk of serious injury or death from a fire hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26498",
+      "date": "2026-05-21",
+      "name": "HomeProGym Resistance Bands",
+      "hazard": "The recalled resistance bands can forcefully separate from the handle during use, posing a risk of serious injury from impact hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26486",
+      "date": "2026-05-14",
+      "name": "Amazon Basics 55 Lbs. Adjustable Dumbbells",
+      "hazard": "The weight plates can fail to engage completely during weight adjustment and dislodge from the dumbbell handle when used, posing an impact hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26482",
+      "date": "2026-05-14",
+      "name": "Can-Am Outlander Pro and Max Pro All-Terrain Vehicles",
+      "hazard": "The ATV's speed limiter control can malfunction, causing unexpected speed and acceleration, posing a serious risk of injury or death from crash hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26493",
+      "date": "2026-05-14",
+      "name": "Cosyland Children's Tower Stools",
+      "hazard": "The recalled tower stools can collapse or tip over while in use, and a child's torso can fit through the openings on the front and back sides, posing a risk of serious injury and death due to tip over",
+      "deaths": false
+    },
+    {
+      "id": "26494",
+      "date": "2026-05-14",
+      "name": "Electric Start Pressure Washers",
+      "hazard": "The electronic start/stop button on the pressure washer can malfunction and self-start, posing a risk of serious injury or death due to carbon monoxide poisoning, if the unit is in a confined space.",
+      "deaths": false
+    },
+    {
+      "id": "26490",
+      "date": "2026-05-14",
+      "name": "Guidecraft Kitchen Helper Towers",
+      "hazard": "The platform inside the recalled tower can loosen over time, causing it to become unstable or detach, and ultimately posing a fall hazard to young children.",
+      "deaths": false
+    },
+    {
+      "id": "26479",
+      "date": "2026-05-14",
+      "name": "Minka Bardon Series Pendant Light Fixtures",
+      "hazard": "The recalled light fixture's frame can detach from the pendant downrod during installation, posing a risk of serious injury or death from an impact hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26481",
+      "date": "2026-05-14",
+      "name": "Tiyol Pull String Teething Toys",
+      "hazard": "The recalled teething toys violate the mandatory standard for toys because the silicone strings are smaller and longer than permitted. The silicone strings can reach the back of the throat and become ",
+      "deaths": false
+    },
+    {
+      "id": "26485",
+      "date": "2026-05-14",
+      "name": "Agio Menlo Woven Patio Swings",
+      "hazard": "The swing seat can detach from the frame while in use, posing a risk of serious injury or death from a fall hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26489",
+      "date": "2026-05-14",
+      "name": "Electric Kettles (ENFINIGY 1.5 l and ENFINIGY Pro 1.5 l)",
+      "hazard": "The kettle's handle can loosen and separate from the kettle, causing hot contents to spill, posing a risk of serious injury due to a burn hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26475",
+      "date": "2026-05-07",
+      "name": "Analemma Water Bottles",
+      "hazard": "The recalled water bottle's inner glass liner can break, posing a risk of serious injury or death from laceration and ingestion hazards.",
+      "deaths": false
+    },
+    {
+      "id": "26458",
+      "date": "2026-04-30",
+      "name": "Model Year 2025-2026 CRF250R/RX/RWE and CRF450R/RX/RWE Off-Road Motorcycles",
+      "hazard": "The handlebar's clamp can unexpectedly cause the handlebar to rotate, posing a risk of serious injury or death due to a crash hazard.",
+      "deaths": false
+    },
+    {
+      "id": "26457",
+      "date": "2026-04-30",
+      "name": "Build-A-Bear Workshop Heartwarming Hugs Bears",
+      "hazard": "The zipper slider on the side pouch can detach, posing a risk of serious injury or death from choking hazard to children.",
+      "deaths": false
+    },
+    {
+      "id": "26456",
+      "date": "2026-04-30",
+      "name": "Stephan Baby Boo Bunnie and Friends Children's Toys",
+      "hazard": "The toys' plastic cube can break into small parts or sharp edges, posing a risk of serious injury from choking and laceration hazards.",
+      "deaths": false
+    },
+    {
+      "id": "26444",
+      "date": "2026-04-30",
+      "name": "Thermos Stainless King 3000 and 3020 Food Jars and Thermos Sportsman 3010 Food & Beverage Bottles",
+      "hazard": "If perishable food or beverages are stored in the container for an extended period of time, the stopper can forcefully eject when opened, which can result in serious impact injury and laceration hazar",
+      "deaths": false
+    },
+    {
+      "id": "26435",
+      "date": "2026-04-23",
+      "name": "32 Degrees Heated Socks",
+      "hazard": "When worn during high-intensity activities that generate a combination of heat, excessive friction, moisture and pressure, the socks can pose an injury hazard including burns.",
+      "deaths": false
+    },
+    {
+      "id": "26433",
+      "date": "2026-04-23",
+      "name": "AMZCMJ DGD Children's Tower Stools",
+      "hazard": "The recalled tower stools can collapse or tip over while in use and a child's torso can fit through the openings on the tower's sides, posing a risk of serious injury and death due to tip over, fall a",
+      "deaths": false
+    },
+    {
+      "id": "26432",
+      "date": "2026-04-23",
+      "name": "TOETOL Tower Stools",
+      "hazard": "The recalled tower stools can collapse or tip over while in use and a child's torso can fit through the openings on the tower's sides, posing a risk of serious injury and death due to tip over, fall a",
+      "deaths": false
+    },
+    {
+      "id": "26431",
+      "date": "2026-04-23",
+      "name": "FitRx SmartBell Quick-Select 5-52.5lbs Adjustable Dumbbells",
+      "hazard": "Weight plates can dislodge from the handle during use, posing a risk of serious injury due to impact hazard.",
+      "deaths": false
+    }
+  ],
+  "data_source": "CPSC SaferProducts.gov Recall API",
+  "generated": "2026-05-28"
+}
